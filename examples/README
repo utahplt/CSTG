@@ -1,0 +1,6 @@
+This is a simple example that shows how to include basic intrumentation in the code. 
+
+"hello_world1" and "hello_world2" uses the strategy to print the stacks in files for offline processing, when executed they will generate the files "stack_trace.txt" and "stack_trace2.txt". Using "stack_trace.txt" and "stack_trace2.txt" as input, use tracerSum and graphDiff to generate CSTGs. Stack traces are appended to files, so clean them before the executions if necessary.
+"hello_world3" uses on the fly strategy and outputs directly the CSTG DOT file, when executed it will create "stack_trace2.dot".
+
+The Makefile shows a simple way to compile mpi programs using the libstacktrace shared library.
