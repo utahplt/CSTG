@@ -1,3 +1,14 @@
+# Coalesced Stack Trace Graphs (CSTGs)
+
+## Author
+Diego Caminha B. de Oliveira
+
+## Associated Publication 
+Alan Humphrey, Qingyu Meng, Martin Berzins, Diego Caminha B. de Oliveira, Zvonimir Rakamaric, Ganesh Gopalakrishnan
+[Systematic Debugging Methods for Large Scale HPC Computational Frameworks](https://soarlab.org/publications/2014_cise_hmbcrg/)
+Computing in Science and Engineering (CiSE), 16(3): 48--56, doi:10.1109/MCSE.2014.11, 2014.
+
+## Usage
 DEPENDENCIES
 
 Graphviz is needed to generate DOT CSTG files.
