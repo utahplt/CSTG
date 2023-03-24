@@ -2,7 +2,7 @@
 
 *This software was created in conjunction with the paper below. tcallred has captured the original code not on Git and placed it here.*
 
-## Originl Author
+## Original Author
 Diego Caminha B. de Oliveira
 
 ## Associated Publication 
