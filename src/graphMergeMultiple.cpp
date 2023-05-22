@@ -43,6 +43,6 @@ int main(int argc, char *argv[]){
 		else
 			printf("File %s was not merged. An error ocurred when trying to merge it.\n", argv[i]);
 	}
-	
+
 	return 0;
 }

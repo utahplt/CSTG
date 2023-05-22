@@ -108,7 +108,7 @@ int main(int argc, char *argv[]){
 	char DOTFILENAME[100];
 	char PSFILENAME[100];
 	char PDFFILENAME[100];
-	
+
 	// read command input
 	if (argc < 4){
 		printf("Usage: graphMerge file1.dot file2.dot output\n");
@@ -120,7 +120,7 @@ int main(int argc, char *argv[]){
 	strcat(PSFILENAME, ".ps");
 	sscanf(argv[3], "%s", PDFFILENAME);
 	strcat(PDFFILENAME, ".pdf");
-	
+
 	// read graphs
 	if (readEdges(edges, nodes, argv[1]))
 		return 1;
@@ -128,7 +128,7 @@ int main(int argc, char *argv[]){
 		return 1;
 
 	findMaxEdge();
-	
+
 	// print output
 	printDotFile(DOTFILENAME);
 	printPSFile(DOTFILENAME, PSFILENAME);

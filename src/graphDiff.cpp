@@ -97,7 +97,7 @@ void printDotFile(const char *DOTFILENAME){
 		if (edges1.find(it->first) == edges1.end())
 			fprintf(pFile, "  \"%s\" -> \"%s\" [label=%d] [penwidth=%d] [color=red];\n", it->first.source.c_str(), it->first.dest.c_str(), -label, (int)(log(label)*MAXEDGE/maxEdge+1));
 	}
-	
+
 	fprintf(pFile, "}");
 	fclose(pFile);
 }
@@ -129,7 +129,7 @@ int main(int argc, char *argv[]){
 	char DOTFILENAME[100];
 	char PSFILENAME[100];
 	char PDFFILENAME[100];
-	
+
 	// read command input
 	if (argc < 4){
 		printf("Usage: graphDiff file1.dot file2.dot output\n");
@@ -141,7 +141,7 @@ int main(int argc, char *argv[]){
 	strcat(PSFILENAME, ".ps");
 	sscanf(argv[3], "%s", PDFFILENAME);
 	strcat(PDFFILENAME, ".pdf");
-	
+
 	// read graphs
 	if (readEdges(edges1, nodes1, argv[1]))
 		return 1;
@@ -149,7 +149,7 @@ int main(int argc, char *argv[]){
 		return 1;
 
 	findMaxEdge();
-	
+
 	// print output
 	printDotFile(DOTFILENAME);
 	printPSFile(DOTFILENAME, PSFILENAME);

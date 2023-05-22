@@ -285,4 +285,3 @@ void cstg::append(const char *fileName){
 void cstg::append(const string &fileName){
 	append(fileName.c_str());
 }
-
