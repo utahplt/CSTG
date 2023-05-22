@@ -84,9 +84,9 @@ void printGexfFile(const char *GEXFFILENAME){
 	for (map<string, int>::iterator it = nodesID.begin(); it != nodesID.end(); ++it){
 		fprintf(pFile, "\t\t\t<node id=\"%d\" label=\"%d\" start=\"%lf\" >\n", it->second, it->second, nodesGrow[it->first].front());
 		fprintf(pFile, "\t\t\t\t<attvalues>\n");
-		for (int i = 0; i < nodesGrow[it->first].size(); ++i)
-		fprintf(pFile, "\t\t\t\t\t<attvalue for=\"weight\" value=\"%d\" start=\"%lf\" /> \n", i+1, nodesGrow[it->first][i]);
-		fprintf(pFile, "\t\t\t\t</attvalues>\n");
+        for (int i = 0; i < nodesGrow[it->first].size(); ++i)
+          fprintf(pFile, "\t\t\t\t\t<attvalue for=\"weight\" value=\"%d\" start=\"%lf\" /> \n", i+1, nodesGrow[it->first][i]);
+        fprintf(pFile, "\t\t\t\t</attvalues>\n");
 		fprintf(pFile, "\t\t\t</node>\n");
 	}
 	fprintf(pFile, "\t\t</nodes>\n");
@@ -98,7 +98,7 @@ void printGexfFile(const char *GEXFFILENAME){
 			fprintf(pFile, "\t\t\t\t\t<attvalue for=\"weight\" value=\"%d\" start=\"%lf\" /> \n", i+1, edgesGrow[it->first][i]);
 		fprintf(pFile, "\t\t\t\t</attvalues>\n");
 		fprintf(pFile, "\t\t\t</edge>\n");
-	}	
+	}
 	fprintf(pFile, "\t\t</edges>\n");
 	fprintf(pFile, "\t</graph>\n");
 	fprintf(pFile, "</gexf>\n");
@@ -107,7 +107,7 @@ void printGexfFile(const char *GEXFFILENAME){
 
 void processStack(double startTime){
 	for (int i = levelCounter.size(); i < queue.size(); ++i)
-		levelCounter.push_back(new map<string, int>());			
+		levelCounter.push_back(new map<string, int>());
 	for (int i = queue.size()-1, j = 0; i >= 0; --i)
 		(*levelCounter[j++])[queue[i]]++;
 	for (int i = queue.size()-1, j = 0; i > 0; --i,  ++j){
@@ -186,7 +186,7 @@ int main(int argc, char *argv[]){
 	getline(inFile, line);
 	sscanf(line.c_str(), "%s %lf", tmp, &startTime);
 	splitToken = tmp;
-	while (getline(inFile, line)){	
+	while (getline(inFile, line)){
 		sscanf(line.c_str(), "%s", tmp);
 		if (tmp == splitToken){
 			processStack(startTime);
@@ -201,7 +201,7 @@ int main(int argc, char *argv[]){
 	for (int i = 0; i < levelCounter.size(); ++i){
 		for (map<string, int>::iterator it = levelCounter[i]->begin(); it != levelCounter[i]->end(); ++it){
 			if (it->second > ignore1){
-				for (int j = 0; j < i; ++j) 
+				for (int j = 0; j < i; ++j)
 					cout << " ";
 				cout << it->first << " -> " << it->second << endl;
 			}
