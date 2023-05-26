@@ -1,13 +1,13 @@
 SHELL = /bin/sh
 CC    = g++
 FLAGS = -O2 -Wno-deprecated-declarations -Wno-unused-result
- 
+
 PREFIX = $(DESTDIR)/usr/local
 BINDIR = $(PREFIX)/bin
 INCLUDEDIR = $(PREFIX)/include
 LIBDIR = $(PREFIX)/lib
- 
-all: 
+
+all:
 	@mkdir -p bin
 	@mkdir -p lib
 	$(CC) src/tracerSum.cpp $(FLAGS) -o bin/tracerSum
@@ -23,7 +23,7 @@ install:
 	install -D bin/graphMergeMultiple $(BINDIR)
 	install -D lib/libstacktracer.so $(LIBDIR)
 	install -D src/Stacktracer.h $(INCLUDEDIR)
- 
+
 uninstall:
 	-rm -f $(BINDIR)/tracerSum
 	-rm -f $(BINDIR)/graphDiff
@@ -31,19 +31,18 @@ uninstall:
 	-rm -f $(BINDIR)/graphMergeMultiple
 	-rm -f $(LIBDIR)/libstacktracer.so
 	-rm -f $(INCLUDEDIR)/Stacktracer.h
- 
+
 clean:
 	-rm -f -r bin lib
- 
+
 .SECONDEXPANSION:
- 
+
 $(foreach OBJ,$(OBJECTS),$(eval $(OBJ)_DEPS = $(shell gcc -MM $(OBJ:.o=.c) | sed s/.*://)))
 %.o: %.c $$($$@_DEPS)
 	$(CC) $(FLAGS) $(CFLAGS) $(DEBUGFLAGS) -c -o $@ $<
- 
+
 # %.o: %.c $(HEADERS) $(COMMON)
 #    $(CC) $(FLAGS) $(CFLAGS) $(DEBUGFLAGS) -c -o $@ $<
- 
+
 .PHONY : all profile release \\
 	install install-strip uninstall clean distclean
-
