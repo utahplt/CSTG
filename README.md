@@ -2,6 +2,10 @@
 
 *This software was created in conjunction with the paper below. tcallred has captured the original code not on Git and placed it here.*
 
+https://github.com/utahplt/CSTG/assets/2874507/1f09fc51-d4fa-457e-be26-4ca5b14a530e
+
+*Illustration by [Ashton Wiersdorf](https://lambdaland.org)*
+
 ## Original Author
 Diego Caminha B. de Oliveira
 
